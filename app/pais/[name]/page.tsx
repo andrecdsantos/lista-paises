@@ -76,7 +76,7 @@ const CountryPage = async ({ params: { name } }: { params: { name: string } }) =
                 <div className="container grid  grid-cols-2 md:grid-cols-3 lg:grid-cols-4 
                 xl:grid-cols-5 w-full gap-2">
                     {borderCountries?.map(border=> 
-                        <CountryCard {...border}/>
+                        <CountryCard key={border.name} {...border}/>
                     )}
                 </div>
             </section>
