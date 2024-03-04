@@ -30,7 +30,9 @@ export type Country = {
 
 async function getCountries(): Promise<Country[]> {
     const response = await fetch('https://restcountries.com/v3.1/all');
-    return response.json();
+    const data = await response.json()
+    const sortedResponse = data.sort((a,b)=> a.translations.por.common.localeCompare(b.translations.por.common))
+    return sortedResponse
 }
 
 export default async function Home() {
